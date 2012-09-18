@@ -1,0 +1,61 @@
+﻿@model OKU.Web.Models.PageSetViewer.ViewItemModel
+@using OKU.Core.Entities;
+@using OKU.Core.Entities.PageStructure;
+@using OKU.Core.Entities.CodeBookStructure;
+@{
+    this.Layout = null;
+}
+@{
+    if (this.Model.ViewItem.DigitalMaterial != null)
+    {
+         //ToDo  check is app using different root for materials (in table exam)            
+        string url = "~/" + Model.ViewItem.DigitalMaterial.AttendeeMaterialStructure.FileSystemBatchPath + Model.ViewItem.DigitalMaterial.DigitalMaterialFileName;  
+        <div style="display: block">
+            <div class="dynamic-map" id="@String.Concat("viewItemId_", Model.ViewItem.Id.ToString())">
+                <img src= "@Url.Content(url)" alt="IMAGE" style="width:1000px" />    
+               @{         
+                        List<ViewItem> childCodePlanViewItem = new List<ViewItem>( this.Model.ViewItem.ViewItemSet.ViewItems.Where(x=>x.DigitalMaterialId == Model.ViewItem.DigitalMaterialId ).Where(y=>y.ViewItemDescriminatorValue == (int)Enums.ViewItemDescriminator.CodePlan)).ToList();
+                        if (childCodePlanViewItem.Count() > 0)
+                        {
+                            do
+                            {
+                                string pointId = "pointId_";
+                                var pointViewItems = childCodePlanViewItem.Where(x => x.PartPerThousandFromTop == childCodePlanViewItem.FirstOrDefault().PartPerThousandFromTop && x.PartPerThousandFromLeft == childCodePlanViewItem.FirstOrDefault().PartPerThousandFromLeft).ToList();
+                                foreach (ViewItem viewItem in pointViewItems)
+                                {
+                                    if (pointId != "pointId_")
+                                    {
+                                        pointId += "-";
+                                    }
+                                    pointId += viewItem.Id.ToString();
+                                }
+                                pointId += "_" + pointViewItems.FirstOrDefault().PartPerThousandFromLeft.ToString() + "-" + pointViewItems.FirstOrDefault().PartPerThousandFromTop.ToString();
+                                string top = (pointViewItems.FirstOrDefault().PartPerThousandFromTop.Value / 10).ToString();
+                                string left = (pointViewItems.FirstOrDefault().PartPerThousandFromLeft.Value / 10).ToString();
+                            <div id = "@pointId" class="point" style="@String.Format("top: {0}%; left: {1}%;", top, left) "></div>       
+                                foreach (ViewItem viewItem in pointViewItems)
+                                {
+                                    childCodePlanViewItem.Remove(viewItem);
+                                }
+                            } while (childCodePlanViewItem.Count() > 0);
+                        }     
+                    }                           
+            </div>  
+             <br />
+             <a id="gototop" href="#">Povratak na vrh</a>      
+        </div>
+    }
+    else if (this.Model.DebugMode)
+    {
+        <div class="debug">
+            ViewItem.DigitalMaterial is null. Not null reference expected.</div>
+    }
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('a#gototop').click(function () {
+            $('#title').focus();
+        });
+    });
+    </script>

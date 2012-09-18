@@ -1,0 +1,35 @@
+﻿@model OKU.Web.Models.PageSetViewer.ViewItemModel
+@using OKU.Core.Entities;
+@{
+    this.Layout = null;
+}
+<div class="view-item">
+    <h3>
+        Čestica</h3>
+    @if (this.Model.ViewItem.Item != null)
+    {
+        if (this.Model.ViewItem.Item.ShowItemBase)
+        {
+        <h4>
+            Osnova</h4>
+        <p>@this.Model.ViewItem.Item.ItemBase</p>
+        }
+        if (this.Model.ViewItem.Item.ShowItemAnswer)
+        {
+        <h4>
+            Odgovor</h4>
+        <p>@this.Model.ViewItem.Item.ItemAnswer</p>
+        }
+        if (this.Model.ViewItem.Item.ShowItemSolution)
+        {
+        <h4>
+            Rješenje</h4>
+        <p>@this.Model.ViewItem.Item.ItemSolution</p>
+        }
+    }
+    else if (this.Model.DebugMode)
+    {
+        <div class="debug">
+            ViewItem.Item is null. Not null reference expected.</div>
+    }
+</div>

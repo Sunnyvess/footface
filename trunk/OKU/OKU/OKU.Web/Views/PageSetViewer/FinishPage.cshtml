@@ -1,0 +1,25 @@
+﻿@model OKU.Web.Models.PageSetViewer.FinishPageModel
+@using OKU.Core.Entities;
+@using OKU.Web.Models.PageSetViewer;
+@{
+    string pageHeader = string.Format("Set {0} - završna stranica", this.Model.PageSet.Code);
+    ViewBag.Title = this.Html.PageTitle(pageHeader);
+}
+<link href="@Url.Content("~/Content/PageSetViewer.css")" rel="stylesheet" type="text/css" />
+
+<h2>Završite ocjenjivanje eseja</h2>
+@using (Html.BeginForm())
+{
+    <div class="page">
+        <div class="page-header">
+            <input type="hidden" value="@(1 + this.Model.TotalPages).ToString()" name="current-page" id="current-page" />
+        </div>
+        <div class="validation-summary">
+            @this.Html.Raw(Model.ValidationSummary)
+        </div>
+    </div>
+    <div style="width: 200px; height:100px; margin: 0 auto;">
+        <input type="submit" id="previous-page" name="previous-page" value="Prethodna" style="float: left;" />
+        <input type="submit" id="end-page" name="end-page" value="Završi" style="float: right;" />
+    </div>
+}

@@ -1,0 +1,12 @@
+﻿@model OKU.Web.Models.PageSetViewer.GridPointModel
+@using OKU.Core.Entities;
+@{
+    Layout = null;
+}
+<div class="view-item">
+  
+    @foreach (OKU.Core.Entities.PageStructure.ViewItem viewItem in Model.CodePlanViewItems)
+    {
+        this.Html.RenderPartial("ViewItemCodePlanPartial", new OKU.Web.Models.PageSetViewer.ViewItemModel(this.Model.DebugMode,viewItem));
+    }
+</div>
