@@ -1,9 +1,0 @@
-﻿@if(Request.IsAuthenticated) {
-    <text><strong>@User.Identity.Name</strong>
-   @* [ @Html.ActionLink("Promjena lozinke", "ChangePassword", "Account") ]*@
-    [ @Html.ActionLink("Odjava", "LogOut", "Account") ]</text>
-}
-else {
-    @:[ @Html.ActionLink("Prijava", "LogIn", "Account") ]
- @*   @:[ @Html.ActionLink("Registracija", "Register", "Account") ]*@
-}
