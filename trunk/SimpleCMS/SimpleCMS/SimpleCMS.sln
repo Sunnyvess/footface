@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCMS.Web", "SimpleCMS.Web\SimpleCMS.Web.csproj", "{6AB8F890-CF6D-4E58-B194-9098FE1F1E01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCMS.Core", "SimpleCMS.Core\SimpleCMS.Core.csproj", "{3A2865EB-0330-47E5-BD4D-CED4FC6DA818}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6AB8F890-CF6D-4E58-B194-9098FE1F1E01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB8F890-CF6D-4E58-B194-9098FE1F1E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB8F890-CF6D-4E58-B194-9098FE1F1E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB8F890-CF6D-4E58-B194-9098FE1F1E01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A2865EB-0330-47E5-BD4D-CED4FC6DA818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A2865EB-0330-47E5-BD4D-CED4FC6DA818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A2865EB-0330-47E5-BD4D-CED4FC6DA818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A2865EB-0330-47E5-BD4D-CED4FC6DA818}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
