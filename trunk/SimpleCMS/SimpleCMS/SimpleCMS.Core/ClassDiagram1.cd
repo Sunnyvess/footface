@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SimpleCMS.Core.Entities.Element">
+    <Position X="11" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Element.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleCMS.Core.Entities.Page">
+    <Position X="2" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAEAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Page.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ContentContainers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SimpleCMS.Core.Entities.Site">
+    <Position X="2" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAACAAAAgAEAgAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Entities\Site.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Subscribers" />
+      <Property Name="Pages" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SimpleCMS.Core.Entities.User">
+    <Position X="7" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAAAAAAAAAAAAAAAAAAAAAACAQAEAAAAAAg=</HashCode>
+      <FileName>Entities\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleCMS.Core.Entities.ContentContainer">
+    <Position X="5.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAAAAAAAQAEAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Entities\ContentContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleCMS.Core.Entities.Content">
+    <Position X="7.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Entities\Content.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleCMS.Core.Entities.News" Collapsed="true">
+    <Position X="10.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\News.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

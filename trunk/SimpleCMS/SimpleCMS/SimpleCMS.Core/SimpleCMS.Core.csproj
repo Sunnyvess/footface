@@ -61,9 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Entities\Area.cs" />
+    <Compile Include="Entities\Content.cs" />
+    <Compile Include="Entities\ContentContainer.cs" />
     <Compile Include="Entities\Element.cs" />
+    <Compile Include="Entities\Link.cs" />
+    <Compile Include="Entities\News.cs" />
     <Compile Include="Entities\Page.cs" />
     <Compile Include="Entities\Site.cs" />
     <Compile Include="Entities\User.cs" />
@@ -77,7 +79,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

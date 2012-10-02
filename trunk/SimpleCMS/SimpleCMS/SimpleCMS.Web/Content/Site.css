@@ -322,3 +322,10 @@ div#title {
 .tri-state {
     width: 6em;
 }
+
+.mojcss
+{
+    background-color:Silver;
+    width:100px;
+    height:300px;
+}

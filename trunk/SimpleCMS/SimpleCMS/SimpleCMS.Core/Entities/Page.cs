@@ -11,7 +11,7 @@ namespace SimpleCMS.Core.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Display(Name = "Identifikator")]
-        public int PageID { get; set; }
+        public int Id { get; set; }
 
         [Display(Name = "Redni broj stranice")]
         public int PageNumber { get; set; }
@@ -25,6 +25,6 @@ namespace SimpleCMS.Core.Entities
         public string Description { get; set; }
 
         [Display(Name = "Kategorije")]
-        public virtual List<Area> Areas { get; set; }
+        public virtual List<ContentContainer> ContentContainers { get; set; }
     }
 }
