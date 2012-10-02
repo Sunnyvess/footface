@@ -12,7 +12,7 @@ namespace SimpleCMS.Core.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Display(Name = "Identifikator")]
-        public int UserID { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [Display(Name = "Korisničko ime")]
