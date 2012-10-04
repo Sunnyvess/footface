@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using SimpleCMS.Core.Infrastructure.Validation;
 
 namespace SimpleCMS.Core.Entities
 {
@@ -17,7 +18,7 @@ namespace SimpleCMS.Core.Entities
 
         public virtual ContentContainer ContentContainer { get; set; }
 
-        [Required]
+        [RequiredForeignKey]
         public int ContentContainerId { get; set; }
 
         public virtual News News { get; set; }
