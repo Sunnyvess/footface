@@ -51,6 +51,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,13 +70,15 @@
     <Compile Include="Entities\Page.cs" />
     <Compile Include="Entities\Site.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Infrastructure\Database\DbInitializer.cs" />
+    <Compile Include="Infrastructure\Extensions\StringExtensions.cs" />
+    <Compile Include="Infrastructure\Validation\RequiredForeignKeyAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SimpleCMS.Web\SimpleCMS.Web.csproj">
-      <Project>{6AB8F890-CF6D-4E58-B194-9098FE1F1E01}</Project>
-      <Name>SimpleCMS.Web</Name>
-    </ProjectReference>
+    <Compile Include="Repositories\Implementation\SimpleCmsDbContext.cs" />
+    <Compile Include="Repositories\Implementation\RepositoryBase.cs" />
+    <Compile Include="Repositories\Implementation\UserRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\IUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -83,8 +86,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Infrastructure\" />
-    <Folder Include="Repositories\" />
+    <Folder Include="Infrastructure\Database\InitData\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
