@@ -90,10 +90,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Infrastructure\HtmlHelpers\CommonHelpers.cs" />
+    <Compile Include="Infrastructure\HtmlHelpers\GridHelpers.cs" />
+    <Compile Include="Infrastructure\HtmlHelpers\PagingHelpers.cs" />
+    <Compile Include="Infrastructure\Providers\SimpleCMSRoleProvider.cs" />
+    <Compile Include="Infrastructure\WebEnums.cs" />
+    <Compile Include="Models\Account\ChangePasswordModel.cs" />
+    <Compile Include="Models\Account\LogInModel.cs" />
+    <Compile Include="Models\Account\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ExtendedStyle.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -404,10 +412,6 @@
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Account\ChangePassword.cshtml" />
-    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
-    <Content Include="Views\Account\LogOn.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
@@ -429,6 +433,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\ViewPage1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleCMS.Core\SimpleCMS.Core.csproj">
+      <Project>{3A2865EB-0330-47E5-BD4D-CED4FC6DA818}</Project>
+      <Name>SimpleCMS.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\LogIn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

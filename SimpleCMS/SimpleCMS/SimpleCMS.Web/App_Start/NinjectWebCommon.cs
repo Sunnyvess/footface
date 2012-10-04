@@ -10,6 +10,8 @@ namespace SimpleCMS.Web.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using SimpleCMS.Core.Repositories;
+    using SimpleCMS.Core.Repositories.Implementation;
 
     public static class NinjectWebCommon 
     {
@@ -53,6 +55,7 @@ namespace SimpleCMS.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<IUserRepository>().To<UserRepository>();
         }        
     }
 }
